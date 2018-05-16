@@ -1,0 +1,35 @@
+<template>
+<div class="columns is-mobile head">
+  <div class="image-box column is-one-fifth">
+    <figure class="image thumbfigure is-1by1">
+      <img class=" thumbnail" src="https://i.imgur.com/K3KJ3w4h.jpg">
+    </figure>
+  </div>
+  <div class="name-box column">
+    <div class="is-size-1 is-size-5-mobile">Book Name</div>
+    <div class="is-size-3 is-size-7-mobile">Author Name</div>
+  </div>
+</div>
+</template>
+
+<script>
+    export default {
+        name: "head-in-card"
+    }
+</script>
+
+<style scoped>
+  .columns{
+    margin: 0!important;
+  }
+  .thumbnail{
+    border-radius: 50%;
+  }
+  .thumbfigure {
+    margin: 0 auto;
+  }
+
+  .head{
+    box-shadow: 0 0 0 1px rgba(10,10,10,.1);
+  }
+</style>
