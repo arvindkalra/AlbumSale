@@ -6,7 +6,8 @@
                     v-on:remove="remove"></head-in-card>
 
       <imageBox v-bind:image="image"></imageBox>
-      <buttons v-on:remove="remove"></buttons>
+      <buttons v-bind:url="url"
+               v-on:remove="remove"></buttons>
     </div>
 </template>
 
