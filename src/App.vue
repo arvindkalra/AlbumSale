@@ -1,8 +1,16 @@
 <template>
   <div id="app">
-    <card></card>
-    <card></card>
-    <card></card>
+    <div class="columns">
+      <div class="column">
+        <card></card>
+      </div>
+      <div class="column">
+        <card></card>
+      </div>
+      <div class="column">
+        <card></card>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,25 +25,7 @@ export default {
 </script>
 
 <style>
-#app {
-
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.columns{
+  margin: 0!important;
 }
 </style>

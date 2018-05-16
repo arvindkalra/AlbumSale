@@ -1,13 +1,13 @@
 <template>
 <div class="columns is-mobile head">
-  <div class="image-box column is-one-fifth">
+  <div class="image-box column is-one-quarter">
     <figure class="image thumbfigure is-1by1">
       <img class=" thumbnail" src="https://i.imgur.com/K3KJ3w4h.jpg">
     </figure>
   </div>
   <div class="name-box column">
-    <div class="is-size-1 is-size-5-mobile">Book Name</div>
-    <div class="is-size-3 is-size-7-mobile">Author Name</div>
+    <div class="is-size-4 is-size-4-mobile">Book Name</div>
+    <div class="is-size-6 is-size-6-mobile">Author Name</div>
   </div>
 </div>
 </template>
@@ -31,5 +31,8 @@
 
   .head{
     box-shadow: 0 0 0 1px rgba(10,10,10,.1);
+  }
+  .name-box{
+    font-family: 'Roboto Condensed', sans-serif;
   }
 </style>
