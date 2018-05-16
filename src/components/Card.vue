@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-      <head-in-card></head-in-card>
-      <imageBox></imageBox>
+      <head-in-card v-bind:title="title"
+                    v-bind:artist="artist"
+                    v-bind:thumbnail="thumbnail"></head-in-card>
+
+      <imageBox v-bind:image="image"></imageBox>
       <buttons></buttons>
     </div>
 </template>
@@ -16,7 +19,8 @@
           "head-in-card" : HeadInCard,
           "imageBox": ImageBox,
           "buttons" : Buttons
-        }
+        },
+        props: ["title", "artist", "thumbnail", "image", "url"]
     }
 </script>
 

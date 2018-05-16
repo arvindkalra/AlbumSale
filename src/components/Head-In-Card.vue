@@ -2,19 +2,20 @@
 <div class="columns is-mobile head">
   <div class="image-box column is-one-quarter">
     <figure class="image thumbfigure is-1by1">
-      <img class=" thumbnail" src="https://i.imgur.com/K3KJ3w4h.jpg">
+      <img class=" thumbnail" :src="thumbnail">
     </figure>
   </div>
   <div class="name-box column">
-    <div class="is-size-4 is-size-4-mobile">Book Name</div>
-    <div class="is-size-6 is-size-6-mobile">Author Name</div>
+    <div class="is-size-4 is-size-4-mobile">{{title}}</div>
+    <div class="is-size-6 is-size-6-mobile">{{artist}}</div>
   </div>
 </div>
 </template>
 
 <script>
     export default {
-        name: "head-in-card"
+        name: "head-in-card",
+        props: ["title", "artist", "thumbnail"]
     }
 </script>
 

@@ -1,12 +1,13 @@
 <template>
   <figure class="image is-1by1">
-    <img src="https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg">
+    <img :src="image">
   </figure>
 </template>
 
 <script>
     export default {
-        name: "ImageBox"
+        name: "ImageBox",
+        props: ["image"]
     }
 </script>
 
