@@ -2,10 +2,11 @@
     <div class="card">
       <head-in-card v-bind:title="title"
                     v-bind:artist="artist"
-                    v-bind:thumbnail="thumbnail"></head-in-card>
+                    v-bind:thumbnail="thumbnail"
+                    v-on:remove="remove"></head-in-card>
 
       <imageBox v-bind:image="image"></imageBox>
-      <buttons></buttons>
+      <buttons v-on:remove="remove"></buttons>
     </div>
 </template>
 
@@ -20,7 +21,20 @@
           "imageBox": ImageBox,
           "buttons" : Buttons
         },
-        props: ["title", "artist", "thumbnail", "image", "url"]
+        props: [
+          "title",
+          "artist",
+          "thumbnail",
+          "image",
+          "url",
+          "index"
+        ],
+        events: ["remove"],
+        methods: {
+          remove(){
+            this.$emit('removeCard', {index : this.index});
+          }
+        }
     }
 </script>
 

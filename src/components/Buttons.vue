@@ -2,7 +2,7 @@
 <div class="buttonBox">
   <div class="initialButtons columns is-mobile">
     <div class="column left has-text-centered">
-      <a class="button is-danger is-outlined">Remove</a>
+      <a class="button is-danger is-outlined" v-on:click="removeButtonClicked">Remove</a>
     </div>
     <div class="column right has-text-centered">
       <a class="button is-success is-outlined">Buy Now</a>
@@ -18,7 +18,13 @@
 
 <script>
     export default {
-        name: "Buttons"
+        name: "Buttons",
+        methods: {
+          removeButtonClicked(){
+            console.log("Buttons Here");
+            this.$emit('remove');
+          }
+        }
     }
 </script>
 

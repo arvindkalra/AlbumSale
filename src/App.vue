@@ -1,13 +1,15 @@
 <template>
   <div id="app">
     <a class="button is-danger is-outlined is-size-4">A &nbsp; L &nbsp; B &nbsp; U &nbsp; M &nbsp; S</a>
-    <div class="columns" v-for="innerList in list">
-      <div class="column" v-for="element in innerList">
+    <div class="columns">
+      <div class="column" v-for="element in list">
         <card v-bind:title="element.title"
               v-bind:artist="element.artist"
               v-bind:thumbnail="element.thumbnail_image"
               v-bind:url="element.url"
-              v-bind:image="element.image"></card>
+              v-bind:image="element.image"
+              v-bind:index="element.index"
+              v-on:removeCard="onRemoved"></card>
       </div>
     </div>
   </div>
@@ -20,9 +22,9 @@ export default {
   components: {
     "card" : Card
   },
+  events: ["removeCard"],
   data(){
     return {
-      chunkSize : 3,
       list : []
     }
   },
@@ -36,14 +38,15 @@ export default {
         });
       },
       breakArrayIntoChunks(myArray){
-        let index = 0;
-        let arrayLength = myArray.length;
-        let chunk_size = this.chunkSize;
-
-        for (index = 0; index < arrayLength; index += chunk_size) {
-          let myChunk = myArray.slice(index, index+chunk_size);
-          this.list.push(myChunk);
+        for(let i = 0; i < myArray.length; i++){
+          myArray[i].index = i;
         }
+
+        this.list = myArray;
+      },
+      onRemoved({index}){
+        this.list.splice(index, 1);
+        this.breakArrayIntoChunks(this.list);
       }
     }
 }
