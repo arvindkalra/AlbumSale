@@ -70,4 +70,12 @@
   .finalButton{
     transition: ease-in .5s;
   }
+  .button.is-danger.is-outlined:hover{
+    background-color: transparent;
+    color: #ff3860;
+  }
+  .button.is-success.is-outlined:hover{
+    background-color: transparent;
+    color:   #23d160;
+  }
 </style>
